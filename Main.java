@@ -44,13 +44,14 @@ public class Main {
 
     // 素早さの比較
     public static void SpeedComparison() {
+        for (int index = 0; index < speedReplace.length; index++) {
+            speedReplace[index].ChangeSpeed();
+        }
+
         // バブルソート
         for (int index = 0; index < speedReplace.length; index++) {
             for (int reversIndex = speedReplace.length - 1; reversIndex > 0; reversIndex--) {
                 // 速度の比較
-                // if ((reversIndex - 1) >= 0) {
-                speedReplace[reversIndex].ChangeSpeed();
-                speedReplace[reversIndex - 1].ChangeSpeed();
                 if (speedReplace[reversIndex].chSpeed < speedReplace[reversIndex - 1].chSpeed) {
                     Swap(speedReplace, reversIndex);
                 }
