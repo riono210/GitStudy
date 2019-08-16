@@ -39,7 +39,10 @@ public class Main {
             }
         }
 
-        System.out.printf("pl%d en%d", players.size(), enemies.size());
+        for (CharacterTmp var : enemies) {
+            System.out.printf("%sがあらわれた！", var.name);
+        }
+        System.out.printf("%n%n");
     }
 
     // 素早さの比較
@@ -65,9 +68,9 @@ public class Main {
             }
         }
         // デバッグ
-        for (CharacterTmp var : speedReplace) {
-            System.out.printf("%s speed%f%n", var.name, var.speed);
-        }
+        // for (CharacterTmp var : speedReplace) {
+        //     System.out.printf("%s speed%f%n", var.name, var.speed);
+        // }
     }
 
     // 要素の交代
@@ -83,7 +86,7 @@ public class Main {
         for (CharacterTmp var : speedReplace) {
             if (var.getClass().getName() == "Player") { // プレイヤー側の攻撃
                 int attackTraget = random.nextInt(enemies.size()); // 攻撃対象をランダムで選択
-                System.out.println(attackTraget);
+                //System.out.println(attackTraget);
 
                 Player playerTmp = (Player) var; // コマンド実行
                 playerTmp.AttackCommand(enemies.get(attackTraget));
@@ -95,7 +98,7 @@ public class Main {
 
             } else if (var.getClass().getName() == "Enemy") { // エネミー側の攻撃
                 int attackTraget = random.nextInt(players.size()); // 攻撃対象をランダムで選択
-                System.out.println(attackTraget);
+                //System.out.println(attackTraget);
 
                 Enemy enemyTmp = (Enemy) var; // コマンド実行
                 enemyTmp.AttackCommand(players.get(attackTraget));
