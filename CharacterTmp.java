@@ -16,6 +16,7 @@ public class CharacterTmp {
         isLive = true;
     }
 
+    // 攻撃時速度変化
     public void ChangeSpeed() {
         Random random = new Random();
         chSpeed = speed + (random.nextInt(5) - 2);
